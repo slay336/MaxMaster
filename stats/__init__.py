@@ -2,7 +2,6 @@ from abc import ABC, abstractmethod
 
 
 class BasicStat(ABC):
-    _name: str
     _caption: str
 
     def __init__(self):
@@ -10,10 +9,13 @@ class BasicStat(ABC):
 
     @property
     @abstractmethod
-    def name(self):
+    def caption(self):
         pass
 
-    @abstractmethod
-    @name.setter
-    def name(self, value):
-        pass
+
+class Knowledge(BasicStat):
+    @property
+    def caption(self):
+        return self._caption
+
+
